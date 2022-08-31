@@ -1,0 +1,23 @@
+uidhd dfhgyhdygbd cfhbgydfhgbb hdfghyd cd fvfygd 
+my name is chetan
+my name is chetan
+#include <stdio.h>
+struct student
+{
+    int rn;
+    char name[20];
+    int age;
+};
+int main()
+{
+    FILE *ptr;
+    struct student s;
+    ptr = fopen("5studentbinary", "a+");
+    //*display the existing record
+    puts("THE EXISTING RECODS ARE -->\n");
+    while (fread(&s, sizeof(struct student), 1, ptr) != 0)
+    {
+        printf("%d  %s  %d \n", s.rn, s.name, s.age);
+    }
+    fclose(ptr);
+}
